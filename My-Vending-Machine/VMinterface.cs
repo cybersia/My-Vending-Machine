@@ -21,12 +21,14 @@ namespace Assignment4_Vending_Machine
             int userSelection;
 
             Console.Clear();
-            Console.WriteLine("----| VENDING MACHINE |----");
-            Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
-            Console.WriteLine("1. Insert money");
-            Console.WriteLine("2. Buy a product");
-            Console.WriteLine("3. View bougth products");
-            Console.WriteLine("4. Finish purchase");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine($"Available Credits: {vendingMachine.GetCredit()} Kr\n");
+            Console.WriteLine("1. Add Credit");
+            Console.WriteLine("2. Purchase Product");
+            Console.WriteLine("3. Item Basket");
+            Console.WriteLine("4. End Purchase");
 
 
             switch (userSelection = AskForSelection())
@@ -65,7 +67,7 @@ namespace Assignment4_Vending_Machine
 
         private void Confirmed(int value)
         {
-            Console.WriteLine($"\n{value}kr has been added to your credits. \nPress any key to continue.");
+            Console.WriteLine($"\n{value}kr has been added to your wallet \nPress any key to continue.");
             Console.ReadKey(false);
         }
 
@@ -78,9 +80,11 @@ namespace Assignment4_Vending_Machine
             {
 
                 Console.Clear();
-                Console.WriteLine("----| VENDING MACHINE |----");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+                Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
                 Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
-                Console.WriteLine("How much would you like to insert?");
+                Console.WriteLine("Choose the amount you would like to add");
                 Console.WriteLine("1. 1000kr\n2. 500kr\n3. 100kr\n4. 50kr\n5. 20kr\n6. 10kr\n7. 5kr\n8. 1kr\nEnter 9 or Finish to return to main menu.");
 
                 Console.Write("\nYour selection: ");
@@ -149,8 +153,10 @@ namespace Assignment4_Vending_Machine
             int i = 1;
 
             Console.Clear();
-            Console.WriteLine("----| VENDING MACHINE |----");
-            Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine($"Available Credits: {vendingMachine.GetCredit()} Kr\n");
             Console.WriteLine("Your products:");
 
             foreach (var item in boughtProducts)
@@ -177,7 +183,9 @@ namespace Assignment4_Vending_Machine
                 int bought = boughtProducts.Length;
 
                 Console.Clear();
-                Console.WriteLine("----| VENDING MACHINE |----");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+                Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
                 Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
 
                 foreach (var item in products)
