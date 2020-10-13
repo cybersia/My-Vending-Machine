@@ -10,7 +10,8 @@ namespace My_Vending_Machine.VendingMachine
         string Usage { get; set; }
         string Type { get; set; }
 
-        //derived class constructor with added variables
+        //class constructor with added variables
+
         public Edibles(string name, int price, string info, string use, string type) : base(name, price)
         {
             Info = info;
