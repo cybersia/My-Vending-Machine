@@ -26,7 +26,7 @@ namespace My_Vending_Machine.VendingMachine
 
         public override string Examine()
         {
-            return $"Product Describtion of{Name} Reads: {Info}";
+            return $"Product Describtion of {Name} Reads: {Info}";
         }
     }
 }
