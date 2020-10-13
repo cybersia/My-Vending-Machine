@@ -1,7 +1,7 @@
-﻿using Assignment4_Vending_Machine.VendingMachine;
+﻿using My_Vending_Machine.VendingMachine;
 using System;
 
-namespace Assignment4_Vending_Machine
+namespace My_Vending_Machine
 {
     class Program
     {

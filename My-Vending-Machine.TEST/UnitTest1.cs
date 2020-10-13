@@ -1,8 +1,8 @@
-using Assignment4_Vending_Machine.VendingMachine;
+using My_Vending_Machine.VendingMachine;
 using System;
 using Xunit;
 
-namespace Assignment4_Vending_Machine.TEST
+namespace My_Vending_Machine.TEST
 {
     public class VMTest1
     {

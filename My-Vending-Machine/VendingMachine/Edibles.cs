@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Assignment4_Vending_Machine.VendingMachine
+namespace My_Vending_Machine.VendingMachine
 {
     public class Edibles : Product
     {
@@ -22,12 +22,12 @@ namespace Assignment4_Vending_Machine.VendingMachine
 
         public override string Use()
         {
-            return $"After recieving the {Name} {Type} from the vending machine you {Usage}";
+            return $"After purchasing {Name} {Type} from My Vending Machine {Usage}";
         }
 
         public override string Examine()
         {
-            return $"While you examine your {Name} {Type} you decide to take a moment to read the description. It reads: {Info}";
+            return $"Product Describtion of {Name} {Type} Reads: {Info}";
         }
     }
 }

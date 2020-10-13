@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Assignment4_Vending_Machine.VendingMachine
+namespace My_Vending_Machine.VendingMachine
 {
     class Reades : Product
     {
@@ -20,12 +20,12 @@ namespace Assignment4_Vending_Machine.VendingMachine
 
         public override string Use()
         {
-            return $"After recieving the {Name} magazine from the vending machine you {Usage}";
+            return $"After purchasing {Name} from My Vending Machine {Usage}";
         }
 
         public override string Examine()
         {
-            return $"While you examine your {Name} magazine you decide to take a moment to read its description. It reads: {Info}";
+            return $"Product Describtion of {Name} Reads: {Info}";
         }
     }
 }

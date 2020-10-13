@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Assignment4_Vending_Machine.VendingMachine
+namespace My_Vending_Machine.VendingMachine
 {
     interface IVM
     {

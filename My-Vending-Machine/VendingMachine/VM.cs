@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Assignment4_Vending_Machine.VendingMachine;
+using My_Vending_Machine.VendingMachine;
 
-namespace Assignment4_Vending_Machine.VendingMachine
+namespace My_Vending_Machine.VendingMachine
 {
     public class VM : IVM
     {
         //fields
+
         int[] moneyDenominator = new int[] { 1000, 500, 100, 50, 20, 10, 5, 1 };
         Product[] boughtProducts = new Product[0];
         Product[] productArr = new Product[8];
@@ -54,8 +55,9 @@ namespace Assignment4_Vending_Machine.VendingMachine
 
         }
 
-        //takes in a value to pick a product, then checks if there is enough money in the pool to purchase that product. 
-        //if it can, the product is added to an array of bought products, otherwise not
+        // Method that takes in a value to pick a product,
+        // checks if there is enough money in moneypool 
+      
         public void PickProduct(int userChoice, VM vm)
         {
             bool canAfford;

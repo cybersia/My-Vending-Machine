@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using Assignment4_Vending_Machine.VendingMachine;
+using My_Vending_Machine.VendingMachine;
 
-namespace Assignment4_Vending_Machine
+namespace My_Vending_Machine
 {
     public class VMinterface
     {
@@ -28,7 +28,7 @@ namespace Assignment4_Vending_Machine
             Console.WriteLine("1. Add Credit ");
             Console.WriteLine("2. Purchase ");
             Console.WriteLine("3. Basket ");
-            Console.WriteLine("4. Finish ");
+            Console.WriteLine("4. Use Item ");
 
 
             switch (userSelection = AskForSelection())
@@ -267,7 +267,7 @@ namespace Assignment4_Vending_Machine
         private void UseProduct(Product product)
         {
             Console.Clear();
-            Console.WriteLine($"What do you want to do with your" +
+            Console.WriteLine($"Please Choose one of the following options for your " +
                 $" product?\n1: Use\n2: Examine");
             int selection = AskForSelection();
 

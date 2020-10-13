@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Assignment4_Vending_Machine.VendingMachine;
+using My_Vending_Machine.VendingMachine;
 
-namespace Assignment4_Vending_Machine.VendingMachine
+namespace My_Vending_Machine.VendingMachine
 {
     public abstract class Product
     {
