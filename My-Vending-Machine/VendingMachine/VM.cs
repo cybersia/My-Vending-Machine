@@ -58,37 +58,7 @@ namespace Assignment4_Vending_Machine.VendingMachine
         {
             bool canAfford;
 
-            switch (userChoice)
-            {
-                case 1:
-                    userPick = productArr[0];
-                    break;
-                case 2:
-                    userPick = productArr[1];
-                    break;
-                case 3:
-                    userPick = productArr[2];
-                    break;
-                case 4:
-                    userPick = productArr[3];
-                    break;
-                case 5:
-                    userPick = productArr[4];
-                    break;
-                case 6:
-                    userPick = productArr[5];
-                    break;
-                case 7:
-                    userPick = productArr[6];
-                    break;
-                case 8:
-                    userPick = productArr[7];
-                    break;
-
-                default:
-                    break;
-            }
-
+            userPick = productArr[userChoice - 1];
             canAfford = userPick.Purchase(userPick, vm);
 
             if (canAfford == true)
@@ -115,5 +85,6 @@ namespace Assignment4_Vending_Machine.VendingMachine
         {
             return moneyDenominator;
         }
+
     }
 }

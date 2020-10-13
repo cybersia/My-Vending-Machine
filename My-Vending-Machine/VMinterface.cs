@@ -21,14 +21,12 @@ namespace Assignment4_Vending_Machine
             int userSelection;
 
             Console.Clear();
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine($"Available Credits: {vendingMachine.GetCredit()} Kr\n");
-            Console.WriteLine("1. Add Credit");
-            Console.WriteLine("2. Purchase Product");
-            Console.WriteLine("3. Item Basket");
-            Console.WriteLine("4. End Purchase");
+            Console.WriteLine("----| VENDING MACHINE |----");
+            Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
+            Console.WriteLine("1. Insert money");
+            Console.WriteLine("2. Buy a product");
+            Console.WriteLine("3. View bougth products");
+            Console.WriteLine("4. Finish purchase");
 
 
             switch (userSelection = AskForSelection())
@@ -67,7 +65,7 @@ namespace Assignment4_Vending_Machine
 
         private void Confirmed(int value)
         {
-            Console.WriteLine($"\n{value}kr has been added to your wallet \nPress any key to continue.");
+            Console.WriteLine($"\n{value}kr has been added to your credits. \nPress any key to continue.");
             Console.ReadKey(false);
         }
 
@@ -80,68 +78,30 @@ namespace Assignment4_Vending_Machine
             {
 
                 Console.Clear();
-                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-                Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
-                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+                Console.WriteLine("----| VENDING MACHINE |----");
                 Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
-                Console.WriteLine("Choose the amount you would like to add");
-                Console.WriteLine("1. 1000kr\n2. 500kr\n3. 100kr\n4. 50kr\n5. 20kr\n6. 10kr\n7. 5kr\n8. 1kr\nEnter 9 or Finish to return to main menu.");
+                Console.WriteLine("How much would you like to insert?");
+                Console.WriteLine("1. 1000kr\n2. 500kr\n3. 100kr\n4. 50kr\n5. 20kr\n6. 10kr\n7. 5kr\n8. 1kr\nEnter 9 to return to main menu.");
 
-                Console.Write("\nYour selection: ");
-                i = Console.ReadLine();
-                switch (i)
+                int[] denom = vendingMachine.GetDenominators();
+                int sel = AskForSelection();
+
+
+                if (sel < 1 || sel > 9)
                 {
-                    case "1":
-                    case "1000kr":
-                        vendingMachine.InsertMoney(0);
-                        Confirmed(1000);
-                        break;
-                    case "2":
-                    case "500kr":
-                        vendingMachine.InsertMoney(1);
-                        Confirmed(500);
-                        break;
-                    case "3":
-                    case "100kr":
-                        vendingMachine.InsertMoney(2);
-                        Confirmed(100);
-                        break;
-                    case "4":
-                    case "50kr":
-                        vendingMachine.InsertMoney(3);
-                        Confirmed(50);
-                        break;
-                    case "5":
-                    case "20kr":
-                        vendingMachine.InsertMoney(4);
-                        Confirmed(20);
-                        break;
-                    case "6":
-                    case "10kr":
-                        vendingMachine.InsertMoney(5);
-                        Confirmed(10);
-                        break;
-                    case "7":
-                    case "5kr":
-                        vendingMachine.InsertMoney(6);
-                        Confirmed(5);
-                        break;
-                    case "8":
-                    case "1kr":
-                        vendingMachine.InsertMoney(7);
-                        Confirmed(1);
-                        break;
-                    case "finish":
-                    case "Finish":
-                    case "9":
-                        keepAlive = false;
-                        break;
-
-                    default:
-                        Console.WriteLine("Not a valid input. Press any key to continue.");
-                        Console.ReadKey(false);
-                        break;
+                    Console.WriteLine("Not a valid input. Press any key to continue.");
+                    Console.ReadKey(false);
                 }
+                else if (sel == 9)
+                {
+                    keepAlive = false;
+                }
+                else
+                {
+                    vendingMachine.InsertMoney(sel - 1);
+                    Confirmed(denom[sel - 1]);
+                }
+
             }
 
             MainMenu();
@@ -153,10 +113,8 @@ namespace Assignment4_Vending_Machine
             int i = 1;
 
             Console.Clear();
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine($"Available Credits: {vendingMachine.GetCredit()} Kr\n");
+            Console.WriteLine("----| VENDING MACHINE |----");
+            Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
             Console.WriteLine("Your products:");
 
             foreach (var item in boughtProducts)
@@ -183,9 +141,7 @@ namespace Assignment4_Vending_Machine
                 int bought = boughtProducts.Length;
 
                 Console.Clear();
-                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-                Console.WriteLine("¤¤¤¤¤¤¤ My Vending Machine ¤¤¤¤¤¤¤¤");
-                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+                Console.WriteLine("----| VENDING MACHINE |----");
                 Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
 
                 foreach (var item in products)
@@ -198,48 +154,21 @@ namespace Assignment4_Vending_Machine
 
 
                 choice = AskForSelection();
-                switch (choice)
-                {
-                    case 1:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 2:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 3:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 4:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 5:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 6:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 7:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 8:
-                        vendingMachine.PickProduct(choice, vendingMachine);
-                        CheckPurchase(choice, bought);
-                        break;
-                    case 9:
-                        keepAlive = false;
-                        break;
 
-                    default:
-                        Console.WriteLine("Not a valid input. Press any key to continue.");
-                        Console.ReadKey(false);
-                        break;
+
+                if (choice < 1 || choice > 9)
+                {
+                    Console.WriteLine("Not a valid input. Press any key to continue.");
+                    Console.ReadKey(false);
+                }
+                else if (choice == 9)
+                {
+                    keepAlive = false;
+                }
+                else
+                {
+                    vendingMachine.PickProduct(choice, vendingMachine);
+                    CheckPurchase(choice, bought);
                 }
             }
 
@@ -261,7 +190,7 @@ namespace Assignment4_Vending_Machine
             {
                 Console.Clear();
                 Console.WriteLine("ERROR: You do not have enough credits to buy this product.");
-                Console.ReadKey(false); 
+                Console.ReadKey(false);
             }
         }
 
