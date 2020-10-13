@@ -22,14 +22,14 @@ namespace My_Vending_Machine.VendingMachine
         {
             MoneyPool = moneyPool;
 
-            productArr[0] = new Edibles("Snickers", 17, "Packed with peanuts, Snickers really satisfies", "Open the packaging and start eating", "energy bar");
-            productArr[1] = new Edibles("MARS", 33, "A Mars a day helps you work , rest and play", "Open the packaging and start eating", "energy bar");
-            productArr[2] = new Edibles("LAYS ", 41, "Wherever celebrations and good times happen, the LAY'S® brand will be there", "Open the packaging and start eating", "potato chips");
-            productArr[3] = new Drinks("Red Bull", 19, "Red Bull is an energy drink sold by Red Bull GmbH, an Austrian company created in 1987", "Open the Can and start drinking");
-            productArr[4] = new Drinks("Spring Water", 33, "Just plain and simple water from fresh springs of Sweden", "Open the bottle and start drinking");
-            productArr[5] = new Drinks("Coka-Cola", 17, "sweetened carbonated beverage that is a cultural institution in the United States and a global symbol of American tastes", "Open the can and start drinking");
-            productArr[6] = new Reades("Four Four Two", 70, "Magazine that delves deep into everything you need to know about the world of football.", " Reading everything from the latest transfer news to the breakthrough future stars you need to know about");
-            productArr[7] = new Reades("Match Of The Day", 52, " Match of The Day always comes to play. Whether you’re in need of all the inside scoop or looking to improve your own game", "getting access to exciting posters, quizzes and competitions, as well as footballer features, important results, great events");
+            productArr[0] = new Edibles("Snickers", 15, "Packed with peanuts, Snickers really satisfies", "Open the packaging and start eating", "energy bar");
+            productArr[1] = new Edibles("MARS", 35, "A Mars a day helps you work , rest and play", "Open the packaging and start eating", "energy bar");
+            productArr[2] = new Edibles("LAYS ", 39, "Wherever celebrations and good times happen, the LAY'S® brand will be there", "Open the packaging and start eating", "potato chips");
+            productArr[3] = new Drinks("Red Bull", 22, "Red Bull is an energy drink sold by Red Bull GmbH, an Austrian company created in 1987", "Open the Can and start drinking");
+            productArr[4] = new Drinks("Spring Water", 31, "Just plain and simple water from fresh springs of Sweden", "Open the bottle and start drinking");
+            productArr[5] = new Drinks("Coka-Cola", 19, "sweetened carbonated beverage that is a cultural institution in the United States and a global symbol of American tastes", "Open the can and start drinking");
+            productArr[6] = new Reades("Four Four Two", 68, "Magazine that delves deep into everything you need to know about the world of football.", " Reading everything from the latest transfer news to the breakthrough future stars you need to know about");
+            productArr[7] = new Reades("Match Of The Day", 54, " Match of The Day always comes to play. Whether you’re in need of all the inside scoop or looking to improve your own game", "getting access to exciting posters, quizzes and competitions, as well as footballer features, important results, great events");
 
         }
 
