@@ -21,12 +21,14 @@ namespace Assignment4_Vending_Machine
             int userSelection;
 
             Console.Clear();
-            Console.WriteLine("----| VENDING MACHINE |----");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine("     My Vending Machine    ");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
-            Console.WriteLine("1. Insert money");
-            Console.WriteLine("2. Buy a product");
-            Console.WriteLine("3. View bougth products");
-            Console.WriteLine("4. Finish purchase");
+            Console.WriteLine("1. Add Credit ");
+            Console.WriteLine("2. Purchase ");
+            Console.WriteLine("3. Basket ");
+            Console.WriteLine("4. Finish ");
 
 
             switch (userSelection = AskForSelection())
@@ -78,9 +80,11 @@ namespace Assignment4_Vending_Machine
             {
 
                 Console.Clear();
-                Console.WriteLine("----| VENDING MACHINE |----");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+                Console.WriteLine("     My Vending Machine    ");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
                 Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
-                Console.WriteLine("How much would you like to insert?");
+                Console.WriteLine("How much credit would you like to add?");
                 Console.WriteLine("1. 1000kr\n2. 500kr\n3. 100kr\n4. 50kr\n5. 20kr\n6. 10kr\n7. 5kr\n8. 1kr\nEnter 9 to return to main menu.");
 
                 int[] denom = vendingMachine.GetDenominators();
@@ -89,7 +93,7 @@ namespace Assignment4_Vending_Machine
 
                 if (sel < 1 || sel > 9)
                 {
-                    Console.WriteLine("Not a valid input. Press any key to continue.");
+                    Console.WriteLine("Invalid Input. Press any key to continue.");
                     Console.ReadKey(false);
                 }
                 else if (sel == 9)
@@ -113,7 +117,9 @@ namespace Assignment4_Vending_Machine
             int i = 1;
 
             Console.Clear();
-            Console.WriteLine("----| VENDING MACHINE |----");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine("     My Vending Machine    ");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
             Console.WriteLine("Your products:");
 
@@ -141,7 +147,9 @@ namespace Assignment4_Vending_Machine
                 int bought = boughtProducts.Length;
 
                 Console.Clear();
-                Console.WriteLine("----| VENDING MACHINE |----");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+                Console.WriteLine("     My Vending Machine    ");
+                Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
                 Console.WriteLine($"Available credits: {vendingMachine.GetCredit()} Kr\n");
 
                 foreach (var item in products)
@@ -150,7 +158,7 @@ namespace Assignment4_Vending_Machine
                 }
 
                 Console.WriteLine("9: Return to main menu.\n");
-                Console.WriteLine("Please enter the number of the product you wish to buy.");
+                Console.WriteLine("Please select the item number");
 
 
                 choice = AskForSelection();
@@ -158,7 +166,7 @@ namespace Assignment4_Vending_Machine
 
                 if (choice < 1 || choice > 9)
                 {
-                    Console.WriteLine("Not a valid input. Press any key to continue.");
+                    Console.WriteLine("Invalid Input. Press any key to continue.");
                     Console.ReadKey(false);
                 }
                 else if (choice == 9)
@@ -183,13 +191,13 @@ namespace Assignment4_Vending_Machine
 
             if (boughtShould == bought + 1)
             {
-                Console.WriteLine($"\n{products[choice - 1].Name} has been added to your products. Press any key to continue.");
+                Console.WriteLine($"\n{products[choice - 1].Name} has been added to your basket. Press any key to continue.");
                 Console.ReadKey(false);
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine("ERROR: You do not have enough credits to buy this product.");
+                Console.WriteLine("ERROR: You do not have enough credits to purchase this product.");
                 Console.ReadKey(false);
             }
         }
@@ -202,7 +210,7 @@ namespace Assignment4_Vending_Machine
             bool keepLooping = true;
 
             Console.Clear();
-            Console.WriteLine("Thank you, please come again!\n");
+            Console.WriteLine("Thank you for shoping at My Vending Machine \n");
             Console.Write("Your change:");
 
             for (int i = 0; i < denominators.Length; i++)
@@ -239,8 +247,8 @@ namespace Assignment4_Vending_Machine
                     Console.WriteLine($"{iCounter++}: {item.Name}.");
                 }
 
-
-                Console.WriteLine("\nPlease enter a number of a product.\nEnter -1 to Exit.");
+               
+                Console.WriteLine("\nPlease select the item number\nEnter -1 to Exit.");
                 int pick = AskForSelection();
 
                 if (pick >= 0)
@@ -259,7 +267,8 @@ namespace Assignment4_Vending_Machine
         private void UseProduct(Product product)
         {
             Console.Clear();
-            Console.WriteLine($"What do you want to do with you product?\n1: Use\n2: Examine");
+            Console.WriteLine($"What do you want to do with your" +
+                $" product?\n1: Use\n2: Examine");
             int selection = AskForSelection();
 
             switch (selection)
@@ -274,7 +283,7 @@ namespace Assignment4_Vending_Machine
                     break;
 
                 default:
-                    Console.WriteLine("Not a valid input. Please try again.");
+                    Console.WriteLine("Invalid input , try again.");
                     Console.ReadKey(false);
                     break;
             }

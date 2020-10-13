@@ -6,23 +6,8 @@ namespace Assignment4_Vending_Machine.TEST
 {
     public class VMTest1
     {
-        /*TEMPLATE
-        [Fact]
-        public void Test()
-        {
-            //ARRANGE
-
-
-            //ACT
-
-
-            //ASSERT
-
-
-        }
-        */
-
-
+        
+           
         [Fact]
         public void InsertMoneyTest()
         {
@@ -41,7 +26,7 @@ namespace Assignment4_Vending_Machine.TEST
 
             //ASSERT
             Assert.Equal(expected, actual);
-            Assert.Equal(expected2, actual2);//this line takes 6ms to execute, why?
+            Assert.Equal(expected2, actual2);
 
         }
 
@@ -49,6 +34,7 @@ namespace Assignment4_Vending_Machine.TEST
         public void CalculateChangeTest()
         {
             //ARRANGE
+
             VM vm = new VM();
             Edibles userProd = new Edibles("Shinji Ramen Noodles", 15, "Spicy flavored ramen noodles made in Japan.", "cook the noodles in boiling water then eat them.", "noodles");
             int insert = 2;
@@ -57,6 +43,7 @@ namespace Assignment4_Vending_Machine.TEST
 
 
             //ACT
+
             vm.InsertMoney(insert);
             vm.CalculateChange(userProd);
             int actual = vm.GetCredit();
@@ -65,6 +52,7 @@ namespace Assignment4_Vending_Machine.TEST
 
 
             //ASSERT
+
             Assert.Equal(expected, actual);
             Assert.Equal(expected2, actual2);
 
@@ -74,6 +62,7 @@ namespace Assignment4_Vending_Machine.TEST
         public void PickProductGOODTest()
         {
             //ARRANGE
+
             VM vm = new VM();
             int userChoice = 2;
             int userChoice2 = 1;
@@ -83,6 +72,7 @@ namespace Assignment4_Vending_Machine.TEST
             int expArrLenght = 2;
 
             //ACT
+
             vm.InsertMoney(insert);
             vm.PickProduct(userChoice, vm);
             int actual = vm.GetCredit();
@@ -92,6 +82,7 @@ namespace Assignment4_Vending_Machine.TEST
             int arrayLength = pickedProducts.Length;
 
             //ASSERT
+
             Assert.Equal(expected, actual);
             Assert.Equal(expected2, actual2);
             Assert.Equal(expArrLenght, arrayLength);
@@ -102,16 +93,19 @@ namespace Assignment4_Vending_Machine.TEST
         public void PickProductBADTest()
         {
             //ARRANGE
+
             VM vm = new VM();
             int insert = 3;
             int expected = 0;
 
             //ACT
+
             vm.PickProduct(insert, vm);
             Product[] pickedProducts = vm.GetBoughtProducts();
             int actual = pickedProducts.Length;
 
             //ASSERT
+
             Assert.Equal(expected, actual);
 
         }

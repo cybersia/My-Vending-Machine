@@ -18,7 +18,8 @@ namespace Assignment4_Vending_Machine.VendingMachine
             Type = type;
         }
 
-        //overridden methods from base class. specialized to fit this class.
+        //override string methods 
+
         public override string Use()
         {
             return $"After recieving the {Name} {Type} from the vending machine you {Usage}";

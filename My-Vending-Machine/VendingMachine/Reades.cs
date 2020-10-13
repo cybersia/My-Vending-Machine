@@ -4,19 +4,20 @@ using System.Text;
 
 namespace Assignment4_Vending_Machine.VendingMachine
 {
-    class Readables : Product
+    class Reades : Product
     {
         string Info { get; set; }
         string Usage { get; set; }
 
         //derived class constructor with added variables
-        public Readables(string name, int price, string info, string use) : base(name, price)
+        public Reades(string name, int price, string info, string use) : base(name, price)
         {
             Info = info;
             Usage = use;
         }
 
-        //overridden methods from base class. specialized to fit this class.
+        //override string methods 
+
         public override string Use()
         {
             return $"After recieving the {Name} magazine from the vending machine you {Usage}";
