@@ -36,7 +36,8 @@ namespace My_Vending_Machine.TEST
             //ARRANGE
 
             VM vm = new VM();
-            Edibles userProd = new Edibles("Shinji Ramen Noodles", 15, "Spicy flavored ramen noodles made in Japan.", "cook the noodles in boiling water then eat them.", "noodles");
+            
+            Edibles userProd = new Edibles("Snickers", 15, "Packed with peanuts, Snickers really satisfies", "Open the packaging and start eating", "energy bar");
             int insert = 2;
             int expected = 85;
             int expected2 = 70;
