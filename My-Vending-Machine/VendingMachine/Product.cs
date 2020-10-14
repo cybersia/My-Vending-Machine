@@ -22,6 +22,7 @@ namespace My_Vending_Machine.VendingMachine
         }
 
         //returns bool dependent on if the money pool contains sufficient funds.
+
         public bool Purchase(Product product, VM vm)
         {
             bool canAfford;
@@ -40,6 +41,7 @@ namespace My_Vending_Machine.VendingMachine
         }
 
         //abstract methods used in derived classes
+
         public abstract string Use();
 
         public abstract string Examine();
