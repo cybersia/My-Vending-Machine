@@ -73,7 +73,7 @@ namespace My_Vending_Machine
 
         private void MenuInsertMoney()
         {
-            string i;
+            //string i;
             bool keepAlive = true;
 
             while (keepAlive == true)
